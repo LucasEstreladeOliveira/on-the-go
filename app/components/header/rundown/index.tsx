@@ -1,21 +1,27 @@
-import { Box, Grid, Paper } from '@mui/material'
+import { Grid } from '@mui/material'
 import React from 'react'
 import RundownCard from './rundown-card'
 import FieldResearch from './field-research'
+import ScreenWrittingResearch from './screen-writting-research'
+import FiredReports from './fired-reports'
 
 function Rundown() {
   return (
-    <Grid container maxWidth={"60em"} gap={2} sx={{marginTop: '14px'}}>
+    <Grid container maxWidth={"60em"} gap={2} sx={{ marginTop: '14px' }}>
       <Grid item xs={2.6}>
         <RundownCard>
           <FieldResearch />
         </RundownCard>
       </Grid>
       <Grid item xs={2.6}>
-        <RundownCard>PESQUISAS EM ROTEIRIZAÇÃO</RundownCard>
+        <RundownCard>
+          <ScreenWrittingResearch />
+        </RundownCard>
       </Grid>
       <Grid item xs={2.6}>
-        <RundownCard>DISPAROS FEITOS</RundownCard>
+        <RundownCard>
+          <FiredReports />
+        </RundownCard>
       </Grid>
     </Grid>
   )

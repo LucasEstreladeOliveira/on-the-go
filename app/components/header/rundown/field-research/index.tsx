@@ -18,11 +18,9 @@ function FieldResearch() {
         </Box>
       </Box>
       <Grid container gap='6px'>
-        <Grid item sx={{ border: '1px solid white', borderRadius: '50%', width: '12px', height: '12px' }}></Grid>
-        <Grid item sx={{ border: '1px solid white', borderRadius: '50%', width: '12px', height: '12px' }}></Grid>
-        <Grid item sx={{ border: '1px solid white', borderRadius: '50%', width: '12px', height: '12px' }}></Grid>
-        <Grid item sx={{ border: '1px solid white', borderRadius: '50%', width: '12px', height: '12px' }}></Grid>
-        <Grid item sx={{ border: '1px solid white', borderRadius: '50%', width: '12px', height: '12px' }}></Grid>
+        {Array.from(Array(TOTAL).keys()).map(value => (
+          <Grid item key={value} sx={{ border: '1px solid white', borderRadius: '50%', width: '12px', height: '12px' }}></Grid>
+        ))}
       </Grid>
     </>
   )
