@@ -6,7 +6,7 @@ function Header() {
   return (
     <Box sx={{background: '#000000', color: '#FFFFFF'}} px={20} py={4}>
       <Typography variant='subtitle2'>RESUMO MENSAL</Typography>
-      <Typography variant='h4'>JANEIRO, 2023</Typography>
+      <Typography variant='h3'>JANEIRO, 2023</Typography>
       <Rundown /> 
     </Box>
   )

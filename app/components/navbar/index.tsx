@@ -14,12 +14,17 @@ import MenuItem from '@mui/material/MenuItem';
 import Image from 'next/image';
 import logo from '../../assets/logo.png';
 import { grey } from '@mui/material/colors';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const pages = ['Pesquisas', 'Créditos', 'Campanhas', 'Equipe', 'Configurações'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.up('lg'))
+
+  const navStyleConfig = isMatch ? { position: 'sticky' } : { position: 'static' };
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
@@ -30,7 +35,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{borderBottom: '1px solid #242528'}}>
+    <AppBar sx={{ borderBottom: '1px solid #242528', boxShadow: 'unset', ...navStyleConfig }}>
       <Container maxWidth={false}>
         <Toolbar disableGutters>
             <Box sx={{ marginRight: '26px' }} >
