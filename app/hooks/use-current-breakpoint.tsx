@@ -16,7 +16,7 @@ function useCurrentBreakpoint() {
     if(lg) {
       return 'lg'
     }
-    return 'md'
+    return null;
   }
   
   return getCurrentBreakpoint()

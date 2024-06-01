@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import NotificationCard from './notification-card'
 import { Box, Typography } from '@mui/material'
-import { NotificationContext } from '../notification-context';
+import { NotificationContext } from '../../../../context/notification/notification-context';
 
 function NotificationList() {
   const { notifications } = useContext(NotificationContext);

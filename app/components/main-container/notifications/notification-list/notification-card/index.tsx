@@ -2,7 +2,7 @@ import GroupCard from '@/app/components/group-card'
 import { ArrowForward, Comment } from '@mui/icons-material'
 import { Box, Grid, Paper, Typography } from '@mui/material'
 import React from 'react'
-import { Notification } from '../../notification-context'
+import { Notification } from '../../../../../context/notification/notification-context'
 import { styled } from '@mui/material'
 import  { TypographyProps } from '@mui/material/Typography'
 

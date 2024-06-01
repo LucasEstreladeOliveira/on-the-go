@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from 'react'
 import { StyledTab, StyledTabs } from '../../custom-tab'
 import { StyledChip } from '../../custom-chip'
 import NotificationList from './notification-list';
-import { NotificationContext } from './notification-context';
+import { NotificationContext } from '../../../context/notification/notification-context';
 import useCurrentBreakpoint from '../../../hooks/use-current-breakpoint';
 
 function Notifications() {

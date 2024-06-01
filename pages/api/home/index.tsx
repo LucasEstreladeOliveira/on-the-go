@@ -8,7 +8,7 @@ export async function handler(req: NextApiRequest, res: NextApiResponse): Promis
 
       return data;
     } catch (err) {
-      console.error(`Error to get url notifications`, { err });
+      console.error(`Error to get url home data`, { err });
       throw err;
     }
   }

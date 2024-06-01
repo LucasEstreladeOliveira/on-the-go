@@ -1,9 +1,16 @@
+import { StyledButton } from '@/app/components/custom-button';
 import GroupCard from '@/app/components/group-card'
 import InfoCard from '@/app/components/info-card'
+import { HomeContext } from '@/app/context/home/home-context';
 import { Box, Button, Grid, Paper, Typography } from '@mui/material'
-import React from 'react'
+import React, { useContext } from 'react'
 
 function Credits() {
+  const { data } = useContext(HomeContext);
+  const available = data?.credits.available?.toLocaleString('pt-BR') || 0;
+  const reserved = data?.credits.reserved?.toLocaleString('pt-BR') || 0;
+  const running = data?.credits.running?.toLocaleString('pt-BR') || 0;
+
   return (
     <Grid item sx={{ display: 'flex', width: '100%'}}>
         <GroupCard>
@@ -16,7 +23,7 @@ function Credits() {
                 >
                   <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', paddingY: '15px' }}>
                     <Box>
-                      <Typography variant='h1'>1.500</Typography>
+                      <Typography variant='h1'>{available}</Typography>
                     </Box>
                     <Box sx={{ textAlign: 'center', display: 'flex', whiteSpace: 'break-spaces', textWrap: 'nowrap' }}>
                     <Typography variant='body2'>{'CRÉDITOS\nDISPONÍVEIS'}</Typography>
@@ -32,7 +39,7 @@ function Credits() {
                 >
                   <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', paddingY: '19px' }}>
                     <Box>
-                      <Typography variant='h2'>300</Typography>
+                      <Typography variant='h2'>{running}</Typography>
                     </Box>
                     <Box sx={{ textAlign: 'center', display: 'flex', whiteSpace: 'break-spaces', textWrap: 'nowrap' }}>
                     <Typography variant='subtitle2'>{'CRÉDITOS\nEM CAMPO'}</Typography>
@@ -47,7 +54,7 @@ function Credits() {
                 >
                   <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#8A9099', paddingY: '19px'}}>
                     <Box>
-                      <Typography variant='h2'>600</Typography>
+                      <Typography variant='h2'>{reserved}</Typography>
                     </Box>
                     <Box sx={{ textAlign: 'center', display: 'flex', whiteSpace: 'break-spaces', textWrap: 'nowrap' }}>
                     <Typography variant='subtitle2'>{'CRÉDITOS\nRESERVADOS'}</Typography>
@@ -58,9 +65,9 @@ function Credits() {
             </Grid>
           </Box>
           <Box sx={{padding: '0px 20px 16px 20px'}}>
-            <Button variant='outlined' fullWidth sx={{ border: '1px solid #C9D1D6', fontSize: '12px', lineHeight: '14.1px', fontWeight: '700', fontFamily: 'inherit', paddingY: '12px'}}>
+            <StyledButton variant='outlined' fullWidth sx={{ border: '1px solid #C9D1D6', fontSize: '12px', lineHeight: '14.1px', fontWeight: '700', fontFamily: 'inherit', paddingY: '12px'}}>
               GERENCIAR CRÉDITOS
-            </Button>
+            </StyledButton>
           </Box>
         </GroupCard>
       </Grid>

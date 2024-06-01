@@ -1,8 +1,11 @@
+import { HomeContext } from '@/app/context/home/home-context';
 import { Box, Grid } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 function ScreenWrittingResearch() {
-  const [currentAmount, setCurrentAmount] = useState(300)
+  const { data } = useContext(HomeContext);
+  const currentAmount = data?.researches.scripting || 0
+
   return (
     <>
       <Box sx={{ marginBottom: '42px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
