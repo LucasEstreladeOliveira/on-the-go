@@ -1,6 +1,6 @@
 import { Box, Grid, useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
-import ResearchSlide from './research-slide'
+import ResearchSlide from './research'
 import AdditionalInfo from './additional-info'
 import Notifications from './notifications'
 import { NotificationContextProvider } from '../../context/notification/notification-context'
@@ -10,17 +10,17 @@ function MainContainer() {
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.up('lg'))
   const currentBreakpoint = useCurrentBreakpoint();
-
+  
   const notificationStyleConfig = isMatch ? { position: 'absolute' } : { position: 'unset' };
 
   return (
-    <Grid container sx={{ flexWrap: 'nowrap', height: '100%', background: '#EEF2F3', paddingLeft: '160px', overflow: 'hidden' }}>
-      <Grid item  sx={{ width: '100%', maxWidth: '1200px' }}>
+    <Grid container sx={{ flexWrap: 'nowrap', background: '#EEF2F3', paddingLeft: '160px', overflow: 'hidden' }}>
+      <Grid item  sx={{ width: '100%', paddingRight: `${currentBreakpoint === 'lg' ? '380px' : '100px'}` }}>
         <ResearchSlide />
         <AdditionalInfo />
       </Grid>
       {currentBreakpoint && 
-        <Grid item sx={{ top: '0', right: '0', minHeight: '100%', display: 'flex', maxWidth: '380px', maxHeight: '100vh', width: '100%', background: '#FFFFFF', ...notificationStyleConfig }}>
+        <Grid item>
           <NotificationContextProvider>
               <Notifications /> 
           </NotificationContextProvider>

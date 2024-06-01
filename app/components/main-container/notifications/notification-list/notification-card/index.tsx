@@ -1,10 +1,11 @@
 import GroupCard from '@/app/components/group-card'
 import { ArrowForward, Comment } from '@mui/icons-material'
-import { Box, Grid, Paper, Typography } from '@mui/material'
+import { Box, BoxProps, Grid, Paper, Typography } from '@mui/material'
 import React from 'react'
 import { Notification } from '../../../../../context/notification/notification-context'
 import { styled } from '@mui/material'
 import  { TypographyProps } from '@mui/material/Typography'
+import NotificationIndicator from '@/app/components/notification-indicator'
 
 export const StyledTypography = styled(Typography)<TypographyProps>(({theme}) => ({
   fontSize: '14px',
@@ -18,12 +19,40 @@ export const StyledTypography = styled(Typography)<TypographyProps>(({theme}) =>
   }
 }))
 
+export const StyledNotificationCard = styled(Box)<BoxProps>(({theme}) => ({
+  padding: '22px 12px 24px 12px', 
+  display: 'flex', 
+  flexDirection: 'column', 
+  gap: '26px', 
+  position: 'relative',
+  '.MuiPaper-root': {
+    background: 'linear-gradient(to left, white 50%, #FF5D55 50%) right',
+    backgroundSize: '200%',
+    transition: '.2s ease-out',
+  },
+  '&:hover .MuiTypography-body2, &:hover svg': {
+    color: '#FF5D55'
+  },
+  '&:hover .MuiPaper-root': {
+    border: '1px solid #FF5D55',
+    backgroundPosition: 'left',
+  },
+  '.MuiPaper-root svg': {
+    transition: '.2s ease-out',
+  },
+  '&:hover .MuiPaper-root svg': {
+    color: 'white',
+  },
+}))
+
 function NotificationCard({notification}: {notification: Notification}) {
   return (
-    <GroupCard>
-      <Box sx={{ padding: '22px 12px 24px 12px', display: 'flex', flexDirection: 'column', gap: '26px', position: 'relative'}}>
+    <GroupCard animated>
+      <StyledNotificationCard>
         {!notification.read && 
-          <Box sx={{ width: '10px', height: '10px', background: '#FF5D55', borderRadius: '50%', position: 'absolute', top: '14px', right: '12px' }}></Box>
+          <Box sx={{ position: 'absolute', top: '14px', right: '12px' }}>
+            <NotificationIndicator color='#FF5D55' size={10}/>
+          </Box>
         }
         <Grid container gap='6px' sx={{ alignItems: 'center' }}>
             <Grid item><Comment sx={{ fontSize: '14px' }} /></Grid>
@@ -39,7 +68,7 @@ function NotificationCard({notification}: {notification: Notification}) {
             </Paper>
           </Grid>
         </Grid>
-      </Box>
+      </StyledNotificationCard>
     </GroupCard>
   )
 }

@@ -20,7 +20,7 @@ export const customTheme = createTheme({
         xs: 0,
         sm: 600,
         md: 900,
-        lg: 1441,
+        lg: 1700,
         xl: 1536
       }
     },

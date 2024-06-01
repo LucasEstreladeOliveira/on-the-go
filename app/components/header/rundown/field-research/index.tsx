@@ -1,3 +1,4 @@
+import NotificationIndicator from '@/app/components/notification-indicator';
 import { HomeContext } from '@/app/context/home/home-context';
 import { Box, Grid } from '@mui/material'
 import React, { useContext, useState } from 'react'
@@ -10,7 +11,9 @@ function FieldResearch() {
 
   return (
     <>  
-      <Box sx={{ position: 'absolute', background:'#0AD2A5', height: '6px', width: '6px', borderRadius: '50%', right: '6px', top: '10px' }} />
+      <Box sx={{ position: 'absolute', right: '6px', top: '10px' }}>
+        <NotificationIndicator size={6} color='#0AD2A5' />
+      </Box>
       <Box sx={{ marginBottom: '42px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
         <Grid container sx={{ alignItems: 'flex-end' }}>
           <Grid item sx={{ color: '#FFFFFF', fontSize: '30px', lineHeight: '100%' }}>{ currentAmount }</Grid>

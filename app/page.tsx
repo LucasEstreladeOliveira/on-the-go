@@ -5,6 +5,7 @@ import Container from "./components/main-container";
 import { ThemeProvider } from "@emotion/react";
 import { customTheme } from './components/customTheme';
 import { HomeDataContextProvider } from "./context/home/home-context";
+import { Box } from "@mui/material";
 
 export default function Home() {
   return (
@@ -12,8 +13,10 @@ export default function Home() {
       <main>
         <HomeDataContextProvider>
           <Navbar />
-          <Header />
-          <Container />
+          <Box>
+            <Header />
+            <Container />
+          </Box>
         </HomeDataContextProvider>
       </main>
     </ThemeProvider>
