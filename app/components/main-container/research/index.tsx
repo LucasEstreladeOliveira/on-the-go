@@ -1,6 +1,6 @@
 import { Box, Grid, Paper, PaperProps, Typography } from '@mui/material'
 import React, { useContext } from 'react'
-import { ArrowBackIosNew, ArrowForwardIos, Height } from '@mui/icons-material';
+import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import Carousel from 'react-elastic-carousel';
 import SliderPagination from './slider-pagination';
 
@@ -58,6 +58,7 @@ function ResearchSlide() {
         <Typography variant='h4'>Minhas Pesquisas</Typography>
       </Box>
       <CustomSliderWrapper container sx={{ position: 'relative', marginLeft: '-60px' }}>
+        {/* @ts-ignore */}
         <Carousel
           itemPadding={[0, 10, 0, 10]}
           isRTL={false}

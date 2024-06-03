@@ -9,9 +9,9 @@ import { HomeContext } from '@/app/context/home/home-context';
 
 function AdditionalInfo() {
   const { data } = useContext(HomeContext);
-  const contacts = data?.audience.contacts?.toLocaleString('pt-BR') || 0;
-  const sended = data?.audience.sended?.toLocaleString('pt-BR') || 0;
-  const balance = data?.audience.balance?.toLocaleString('pt-BR') || 0;
+  const contacts = data?.audience?.contacts?.toLocaleString('pt-BR') || 0;
+  const sended = data?.audience?.sended?.toLocaleString('pt-BR') || 0;
+  const balance = data?.audience?.balance?.toLocaleString('pt-BR') || 0;
 
   return (
     <Grid container sx={{ marginY: '55px', flexWrap: 'nowrap', paddingRight: '60px' }} gap={2}>

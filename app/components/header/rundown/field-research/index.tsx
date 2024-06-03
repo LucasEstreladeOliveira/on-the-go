@@ -5,7 +5,7 @@ import React, { useContext, useState } from 'react'
 
 function FieldResearch() {
   const { data } = useContext(HomeContext);
-  const runningResearches = data?.researches.running.split('/')
+  const runningResearches = data?.researches.running?.split('/')
   const currentAmount = runningResearches?.[0] ?? 0
   const total = runningResearches?.[1] ?? 0
 

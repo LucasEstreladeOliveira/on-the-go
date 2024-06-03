@@ -3939,10 +3939,10 @@ react-dom@^18:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
 
-react-elastic-carousel@^0.11.5:
-  version "0.11.5"
-  resolved "https://registry.yarnpkg.com/react-elastic-carousel/-/react-elastic-carousel-0.11.5.tgz#4be027ea047c4f7678273caa844e83d91f3784dc"
-  integrity sha512-//k1IWUiUNXXNE8LHw4bLdP+8YCXLQHbeSOPiZo/+sTkUBp/YB/hjGKWH4RqSJ59AjF8PoxB+SUbqhdPTcwAuw==
+react-elastic-carousel@0.11.4:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/react-elastic-carousel/-/react-elastic-carousel-0.11.4.tgz#06b6ced04acbea955a580b1a3a469f1214e45822"
+  integrity sha512-hDhNxb/6VhJQQrQjmrL9xo73yPjkXkTLNvx5VSml+9efFYJXItO4CMOrvtfJCTYKcJP1HMKeyJK7u8JG+M1sBQ==
   dependencies:
     classnames "^2.2.6"
     react-only-when "^1.0.2"

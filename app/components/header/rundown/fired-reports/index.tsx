@@ -4,8 +4,8 @@ import React, { useContext, useState } from 'react'
 
 function FiredReports() {
   const { data } = useContext(HomeContext);
-  const currentAmount = data?.audience.sended.toLocaleString('pt-BR') || 0;
-  const total = data?.audience.balance.toLocaleString('pt-BR') || 0;
+  const currentAmount = data?.audience?.sended.toLocaleString('pt-BR') || 0;
+  const total = data?.audience?.balance.toLocaleString('pt-BR') || 0;
   const completed = currentAmount ? (Number(currentAmount) * 100) / Number(total) : 0;
 
   return (

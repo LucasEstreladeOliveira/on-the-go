@@ -1,7 +1,7 @@
 import InfoCard from '@/app/components/info-card'
 import { HomeContext } from '@/app/context/home/home-context';
 import { Box, Typography } from '@mui/material'
-import React, { KeyboardEvent, useContext, useState } from 'react'
+import React, { BaseSyntheticEvent, KeyboardEvent, useContext, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import DraftAccent from './draft-accent';
 import NotificationIndicator from '@/app/components/notification-indicator';
@@ -15,12 +15,16 @@ interface ResearchProps {
   research: Research
 }
 
+interface FormData {
+  title: string
+}
+
 function ResearchCard({research}: ResearchProps) {
   const { data: homeData, setHomeData } = useContext(HomeContext);
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data, e) => {
-    e.preventDefault();
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const onSubmit = (data: FormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
+    e?.preventDefault();
     const newResearches = homeData?.researches.myresearches.map(r => { return r.id === research.id ? { id: research.id, name: data.title || '', status: 'Em Campo' } : r}) as Research[]
     setHomeData({
       ...homeData,

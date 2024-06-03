@@ -4,7 +4,7 @@ import React, { useContext, useState } from 'react'
 
 function ScreenWrittingResearch() {
   const { data } = useContext(HomeContext);
-  const currentAmount = data?.researches.scripting.toLocaleString('pt-BR') || 0
+  const currentAmount = data?.researches.scripting?.toLocaleString('pt-BR') || 0
 
   return (
     <>

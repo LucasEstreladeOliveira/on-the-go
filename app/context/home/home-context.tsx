@@ -4,26 +4,26 @@ import axios from 'axios';
 
 export interface HomeData {
   researches: {
-    running: string;
-    scripting: number;
+    running?: string;
+    scripting?: number;
     myresearches: {
       name: string;
       id: number;
       status: string;
     }[]
   };
-  audience: {
+  audience?: {
     balance: number;
     sended: number;
     contacts: number;
   },
-  credits: {
+  credits?: {
     running: number;
     reserved: number;
     available: number;
   },
-  id: string;
-  createAt: string;
+  id?: string;
+  createAt?: string;
 }
 
 interface Home {

@@ -7,9 +7,9 @@ import React, { useContext } from 'react'
 
 function Credits() {
   const { data } = useContext(HomeContext);
-  const available = data?.credits.available?.toLocaleString('pt-BR') || 0;
-  const reserved = data?.credits.reserved?.toLocaleString('pt-BR') || 0;
-  const running = data?.credits.running?.toLocaleString('pt-BR') || 0;
+  const available = data?.credits?.available?.toLocaleString('pt-BR') || 0;
+  const reserved = data?.credits?.reserved?.toLocaleString('pt-BR') || 0;
+  const running = data?.credits?.running?.toLocaleString('pt-BR') || 0;
 
   return (
     <Grid item sx={{ display: 'flex', width: '100%'}}>
